@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="lotería.css">
+</head>
+<body>
+<main>
+
+  <div class="Tlote"  v-if="cambio3 == true" >
+    <p>LOTERÍA: {{loteria}}</p>
+    
+  </div>
+  
+  
+  
+  <div class="atras" v-if="cambio3 == true">
+    <button class="conbtn" @click="atras()"><img src="atras.png" width="40" height="40"></button>
+    
+  </div>
+  
+    <div class="atras" v-if="cambio == true" >
+      
+      <a href="http://localhost:7700/loteria.html">  <button class="conbtn" @click="atras()"><img src="atras.png" width="40" height="40"></button> </a>
+      
+      
+   
+    
+  </div>
+  
+  
+  
+  <div class="container2" v-if="cambio == true" >
+    <div v-if="cambio == true" >
+    <label class="lote" >Cantidad de Filas</label>
+    <input class="hola" type="number" placeholder="Del 1 - 20" v-model="cantidad">
+    <button class="but" @click="numeroGanador"  >GENERAR LISTA</button>
+    
+    </div>
+    <div v-if="cambio2 == true"  class="ver">
+      <p>LISTA GENERADA <button class="btn" @click="verLista()">VER LISTA</button></p>
+      
+    </div>
+ 
+    
+  </div>
+  
+   <div class="tabla" v-if="cambio3 == true">
+  
+  <table class="tabla2" border="1">
+    <tr >
+      <th>#</th>
+      <th>NÚMERO</th>
+    </tr>
+    <tr v-for="(data, index) in lista">
+      <td>{{index+1}}</td>
+      <td>{{data.A}}{{data.B}}{{data.C}}{{data.D}}</td>
+    </tr>
+  </table>
+  
+ 
+  
+</div>
+
+
+</main>
+
+  <script src="code.js"></script>
+  <script src="codeDos.js"></script>
+
+</body>
+</html>
